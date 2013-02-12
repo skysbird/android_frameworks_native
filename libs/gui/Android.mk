@@ -42,6 +42,7 @@ LOCAL_MODULE:= libgui
 ifeq ($(TARGET_BOARD_PLATFORM), omap4)
 	LOCAL_CFLAGS += -DUSE_FENCE_SYNC
 endif
+
 ifeq ($(TARGET_BOARD_PLATFORM), s5pc110)
 	LOCAL_CFLAGS += -DUSE_FENCE_SYNC
 endif
@@ -54,9 +55,9 @@ ifneq ($(filter generic%,$(TARGET_DEVICE)),)
     LOCAL_CFLAGS += -DUSE_FENCE_SYNC
 endif
 
-ifeq ($(call is-vendor-board-platform,QCOM),true)
-	LOCAL_CFLAGS += -DUSE_NATIVE_FENCE_SYNC
-endif
+#ifeq ($(call is-vendor-board-platform,QCOM),true)
+#	LOCAL_CFLAGS += -DUSE_NATIVE_FENCE_SYNC
+#endif
 
 include $(BUILD_SHARED_LIBRARY)
 

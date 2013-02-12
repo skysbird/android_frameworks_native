@@ -467,6 +467,7 @@ status_t SurfaceTexture::syncForReleaseLocked(EGLDisplay dpy) {
     ST_LOGV("syncForReleaseLocked");
 
     if (mCurrentTexture != BufferQueue::INVALID_BUFFER_SLOT) {
+        //ST_LOGE("syncForReleaseLocked: useNativeFenceSync: %d",useNativeFenceSync);
         if (useNativeFenceSync) {
             EGLSyncKHR sync = eglCreateSyncKHR(dpy,
                     EGL_SYNC_NATIVE_FENCE_ANDROID, NULL);
@@ -521,6 +522,7 @@ status_t SurfaceTexture::syncForReleaseLocked(EGLDisplay dpy) {
             glFlush();
             mEglSlots[mCurrentTexture].mEglFence = fence;
         }
+        //ST_LOGE("syncForReleaseLocked: finished %d");
     }
 
     return OK;
