@@ -1582,7 +1582,7 @@ void SurfaceFlinger::doComposeSurfaces(const sp<const DisplayDevice>& hw, const 
                     case HWC_FRAMEBUFFER_TARGET: {
                         // this should not happen as the iterator shouldn't
                         // let us get there.
-                        ALOGW("HWC_FRAMEBUFFER_TARGET found in hwc list (index=%d)", i);
+                        //ALOGW("HWC_FRAMEBUFFER_TARGET found in hwc list (index=%d)", i);
                         break;
                     }
                 }
